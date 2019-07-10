@@ -1,0 +1,55 @@
+##############################################################
+### file di parametri per il programma di generazione dei
+### testbench
+#############################################################
+
+
+# nome della directory con  i vhdl
+### param['dir']['vhdl']
+dir_dut = /media/tesla/Storage/Linux/Scrivania/Progetti_work/git/lab_lowpower/lab6/4;
+
+# nome della directory con  i vhdl
+### param['dir']['vhdl']
+dir_aref = /media/tesla/Storage/Linux/Scrivania/Progetti_work/git/lab_lowpower/lab6/4/tb_generator;
+
+# nome della directory per i file di ingresso
+### param['dir']['in']
+dir_in = /media/tesla/Storage/Linux/Scrivania/Progetti_work/git/lab_lowpower/lab6/4;
+
+# nome della directory con i file per le uscite
+### param['dir']['out']
+dir_out = /media/tesla/Storage/Linux/Scrivania/Progetti_work/git/lab_lowpower/lab6/4;
+
+# nome della directory dei parametri
+### param['dir']['param']
+#dir_param = /media/tesla/Storage/Linux/Scrivania/Progetti_work/git/lab_lowpower/lab6/4/tb_generator/config;
+dir_param = /home/tesla/git/lab_lowpower/lab6/4/tb_generator/config;
+
+# nome del file della dut, verrà salvato in
+# e verrà generato anche il file di uscita in cui verranno
+# salvati i dati in uscita dalla dut in modo automatico
+# il suo nome è lo stesso della dut col _out.txt finale
+### param['file']['dut'] (stringa)
+### param['file']['output']['dut'] (stringa) 
+### MOD 1,2,3,4,5,6,7
+dut_filename = rca.vhd;
+
+# nome del file di input dei dati, verrà salvato in
+### param['file']['input'] (stringa)
+### MOD 1,2,3,4,5,6,7
+input_filename = input_data.txt;
+
+# nome del file di output con le uscite corrette
+### param['file']['output']['correct'] (stringa)
+### MOD 2,3,6,7
+correct_out_filename = correct_out.txt;
+
+# nome del file della AREF, ossia dell'architettura di 
+# riferimento utilizzata, viene creato anche in automatico
+# il nome del file d'uscita, aggiungendo _out.txt alla fine
+### param['file']['aref'] (stringa)
+### param['file']['output']['aref'] (stringa)
+### MOD 1,4,5
+aref_filename = inccomp.vhd;
+
+

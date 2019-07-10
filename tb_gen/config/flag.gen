@@ -1,0 +1,45 @@
+#######################################################
+# file per i flag del circuito di generazione dei 
+# testbench.
+# i riferimenti a param['....'] sono stati inseriti 
+# per far riferimento alla variabile usata nel codice
+# invece MOD è riferito alle modalità di testbench
+# finora sono state implementate solo 7 modalità
+######################################################
+
+
+# flag per sapere se il circuito è combinatorio o meno
+# seq/comb
+### param['flag']['seq_comb'] (stringa) 
+### MOD 1-7
+flag_seq_comb = seq;
+
+# flag per sapere se c'è l'fsm
+# 1/0
+# implica:
+#	flag_seq_comb = seq
+### param['flag']['fsm'] (1/0)
+### MOD 1,2,3,4,5,6
+flag_fsm = 0;
+
+# flag per sapere se c'è l'aref di riferimento
+# 1/0
+### param['flag']['aref'] (1/0)
+### MOD 1-7
+flag_aref = 1;
+
+# flag per sapere se ho l'ingresso parallelo o custom
+# p/c
+# implica:
+# 	flag_seq_comb = seq && flag_fsm = 1
+### param['flag']['parallel_custom_in'] (p/c)
+### MOD 3,4,5,6
+flag_parallel_custom_in = p;
+
+# flag per dire al programma di salvare le uscite
+# per esempio nella modalità con aref le uscite
+# potrebbero non interessare, tanto utilizza gli assert,
+# in questo modo però è possibile forzare le uscite in ogni caso
+### param['flag']['save_output']
+### all
+flag_save_output = 1;

@@ -1,0 +1,63 @@
+###################################################
+# File per la configurazione del generatore di 
+# testbench, in questo file sono salvate le
+# variabili che servono per la sincronizzazione
+###################################################
+
+
+# clock
+### param['sync']['clk']['period'] (stringa)
+### param['sync']['clk']['name'] (stringa)
+### MOD 1-7
+# nome del clock nell'entiit
+clk_name = clk;
+clk_period = 10 ns;
+
+# reset
+### param['sync']['rst']['wave']['value'] (lista di valori 1-0)
+### param['sync']['rst']['wave']['time'] (lista del tempo che devono durare
+###										  i valori)
+### param['sync']['rst']['name'] (stringa)
+### MOD 1-7
+# nome del reset nell'entity
+rst_name = rst;
+rst_wave (
+# valore = n di colpi di clock
+0 = 3
+1 = 10
+# 0 fino alla fine
+0 = end
+);
+
+# done
+# viene definito il nome del done nell'entity
+### param['sync']['done']['name'] (stringa)
+### MOD 3,6
+done_name = done_name_in_entity;
+
+# start
+# viene definito il nome dello start nell'entity
+### param['sync']['start']['name'] (stringa)
+start_name = start_name_in_entity;
+
+# timing per l'ingresso custom
+# viene definito lo shift rispetto al done
+### param['sync']['custom_in']['name'] (lista dei nomi di ingresso)
+### param['sync']['custom_in']['shift'] (lsita dello shift rispetto allo start)
+timing_custom_in (
+# shift = nome_input
+0 = a
+2 = b
+);
+
+# sequenza degli ingressi
+### param['sync']['input_sequence']
+input_sequence (
+a
+b
+);
+
+output_sequence (
+s
+);
+

@@ -1,0 +1,30 @@
+#################################################
+# File di configurazione per la generazione di 
+# testbench, in questo file sono presenti le
+# costanti usate
+#################################################
+
+# ritardo fra ingresso e uscita, da definire solo
+# se il circuito è combinatorio.
+# viene letta se:
+# 	flag_seq_comb = comb
+### param['constant']['in_out_delay'] (stringa)
+in_out_delay = 10 ns;
+
+# ritardo in clk fra due ingressi consecutivi 
+# per i circuiti sequenziali
+### param['constant']['clk_between_input']
+clk_between_input = 1;
+
+# valori di default degli ingressi
+# viene letta se:
+#	flag_seq_comb = seq
+### param['constant']['default_in_value']['name']
+### param['constant']['default_in_value']['sig']
+### param['constant']['default_in_value']['value']
+default_in_value (
+a = 0
+b = 1
+);
+
+
